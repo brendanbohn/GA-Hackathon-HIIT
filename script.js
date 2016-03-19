@@ -2,12 +2,17 @@ $(document).ready(function() {
 
 	var audio = $('#audio'),
 			resetButton = $('#reset-button'),
+			startButton = $("#start-button"),
 			restInterval,
 			actionInterval,
 			restCounter,
 			actionCounter;
 
+	resetButton.hide();
+
 	function actionTimer(){
+		startButton.hide();
+		resetButton.show();
 	  actionCounter = 60;
 	  actionInterval = setInterval(function() {
 	    actionCounter--;
@@ -46,10 +51,12 @@ $(document).ready(function() {
 	 });
 	
 	resetButton.on('click', function() {
-			clearInterval(restInterval);
-			clearInterval(actionInterval);
-			span = document.getElementById("count");
-			span.innerHTML = 60;
+		startButton.show();
+		resetButton.hide();
+		clearInterval(restInterval);
+		clearInterval(actionInterval);
+		span = document.getElementById("count");
+		span.innerHTML = 60;
 	});
 
 });
