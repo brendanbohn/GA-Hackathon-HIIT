@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
 	var audio = $('#audio'),
-			resetButton = $('#reset'),
+			resetButton = $('#reset-button'),
 			restInterval,
 			actionInterval,
 			restCounter,
@@ -41,7 +41,7 @@ $(document).ready(function() {
 	  }, 1000);
 	}
 
-	$("#startClock").click(function(){
+	$("#start-button").click(function(){
 	    actionTimer();
 	 });
 	
