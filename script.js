@@ -8,7 +8,7 @@ $(document).ready(function() {
 			actionCounter;
 
 	function actionTimer(){
-	  actionCounter = 10;
+	  actionCounter = 60;
 	  actionInterval = setInterval(function() {
 	    actionCounter--;
 	    if (actionCounter >= 0) {
@@ -18,14 +18,14 @@ $(document).ready(function() {
 	    if (actionCounter === 0) {
 	        //alert('sorry, out of time');
 	        clearInterval(actionInterval);
-	        audio.append('<audio src="./Audio/beep02.mp3" preload="auto" autoplay></audio>');
+	        audio.append('<audio src="./Audio-Images/beep02.mp3" preload="auto" autoplay></audio>');
 	        restTimer();
 	    }
 	  }, 1000);
 	}
 
 	function restTimer() {
-		restCounter = 5;
+		restCounter = 10;
 	  restInterval = setInterval(function() {
 	    restCounter--;
 	    if (restCounter >= 0) {
@@ -34,7 +34,7 @@ $(document).ready(function() {
 	    }
 	    if (restCounter === 0) {
 	        //alert('sorry, out of time');
-	        audio.append('<audio src="./Audio/beep01.mp3" preload="auto" autoplay></audio>');
+	        audio.append('<audio src="./Audio-Images/beep01.mp3" preload="auto" autoplay></audio>');
 	        clearInterval(restInterval);
 	        actionTimer();
 	    }
@@ -49,7 +49,7 @@ $(document).ready(function() {
 			clearInterval(restInterval);
 			clearInterval(actionInterval);
 			span = document.getElementById("count");
-			span.innerHTML = 10;
+			span.innerHTML = 60;
 	});
 
 });
