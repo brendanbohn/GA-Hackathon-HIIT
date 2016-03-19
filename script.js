@@ -1,4 +1,7 @@
 $(document).ready(function() {
+
+	var audio = $('#audio');
+
 	function actionTimer(){
 	  var actionCounter = 10;
 	  setInterval(function() {
@@ -10,6 +13,7 @@ $(document).ready(function() {
 	    if (actionCounter === 0) {
 	        //alert('sorry, out of time');
 	        clearInterval(actionCounter);
+	        audio.append('<audio src="./Audio/beep02.mp3" preload="auto" autoplay></audio>');
 	        restTimer();
 	    }
 	  }, 1000);
@@ -25,6 +29,7 @@ $(document).ready(function() {
 	    }
 	    if (restCounter === 0) {
 	        //alert('sorry, out of time');
+	        audio.append('<audio src="./Audio/beep01.mp3" preload="auto" autoplay></audio>');
 	        clearInterval(restCounter);
 	        actionTimer();
 	    }
