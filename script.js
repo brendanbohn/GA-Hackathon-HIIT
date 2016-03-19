@@ -1,10 +1,15 @@
 $(document).ready(function() {
 
-	var audio = $('#audio');
+	var audio = $('#audio'),
+			resetButton = $('#reset'),
+			restInterval,
+			actionInterval,
+			restCounter,
+			actionCounter;
 
 	function actionTimer(){
-	  var actionCounter = 10;
-	  setInterval(function() {
+	  actionCounter = 10;
+	  actionInterval = setInterval(function() {
 	    actionCounter--;
 	    if (actionCounter >= 0) {
 	      span = document.getElementById("count");
@@ -12,7 +17,7 @@ $(document).ready(function() {
 	    }
 	    if (actionCounter === 0) {
 	        //alert('sorry, out of time');
-	        clearInterval(actionCounter);
+	        clearInterval(actionInterval);
 	        audio.append('<audio src="./Audio/beep02.mp3" preload="auto" autoplay></audio>');
 	        restTimer();
 	    }
@@ -20,8 +25,8 @@ $(document).ready(function() {
 	}
 
 	function restTimer() {
-		var restCounter = 5;
-	  setInterval(function() {
+		restCounter = 5;
+	  restInterval = setInterval(function() {
 	    restCounter--;
 	    if (restCounter >= 0) {
 	      span = document.getElementById("count");
@@ -30,7 +35,7 @@ $(document).ready(function() {
 	    if (restCounter === 0) {
 	        //alert('sorry, out of time');
 	        audio.append('<audio src="./Audio/beep01.mp3" preload="auto" autoplay></audio>');
-	        clearInterval(restCounter);
+	        clearInterval(restInterval);
 	        actionTimer();
 	    }
 	  }, 1000);
@@ -39,4 +44,12 @@ $(document).ready(function() {
 	$("#startClock").click(function(){
 	    actionTimer();
 	 });
+	
+	resetButton.on('click', function() {
+			clearInterval(restInterval);
+			clearInterval(actionInterval);
+			span = document.getElementById("count");
+			span.innerHTML = 10;
+	});
+
 });
