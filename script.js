@@ -12,6 +12,8 @@ $(document).ready(function() {
 	  actionInterval = setInterval(function() {
 	    actionCounter--;
 	    if (actionCounter >= 0) {
+	    	document.getElementById("current").innerHTML = "INTERVAL";
+	    	document.getElementById("next").innerHTML = "Rest - 10 Seconds";
 	      span = document.getElementById("count");
 	      span.innerHTML = actionCounter;
 	    }
@@ -29,6 +31,8 @@ $(document).ready(function() {
 	  restInterval = setInterval(function() {
 	    restCounter--;
 	    if (restCounter >= 0) {
+	    	document.getElementById("current").innerHTML = "REST";
+	    	document.getElementById("next").innerHTML = "Interval - 60 Seconds";
 	      span = document.getElementById("count");
 	      span.innerHTML = restCounter;
 	    }
@@ -48,6 +52,8 @@ $(document).ready(function() {
 	resetButton.on('click', function() {
 			clearInterval(restInterval);
 			clearInterval(actionInterval);
+			document.getElementById("current").innerHTML = "INTERVAL";
+	    document.getElementById("next").innerHTML = "Rest - 10 Seconds";
 			span = document.getElementById("count");
 			span.innerHTML = 60;
 	});
