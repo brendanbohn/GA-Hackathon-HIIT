@@ -2,10 +2,10 @@ $(document).ready(function() {
 
 	function restTimer() {
 		console.log("rest timer called");
-    setTimeout(function(){
-		    actionTimer();
-	  	}, 5000);
+		secondsCounter();
+		fullRest();
 	 }
+
 	 function actionTimer() {
 	 		console.log("action timer called");
  	    setTimeout(function(){
@@ -13,6 +13,22 @@ $(document).ready(function() {
  		  	}, 10000);
 	 }
 
-	actionTimer();
+	 function fullRest() {
+	 		console.log("full rest timer");
+	 	  setTimeout(function(){
+		    actionTimer();
+	  	}, 5000);
+	 }
+
+	 function secondsCounter() {
+	 	var s = 0;
+	 	console.log("seconds counter");
+ 	  setTimeout(function(){
+ 	  	s = s+1;
+	    console.log(s);
+  	}, 1000);
+	 }
+
+	restTimer();
 
 });
