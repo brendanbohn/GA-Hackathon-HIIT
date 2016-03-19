@@ -11,6 +11,7 @@ $(document).ready(function() {
 	resetButton.hide();
 
 	function actionTimer(){
+		audio.find('audio').first().remove();
 		startButton.hide();
 		resetButton.show();
 	  actionCounter = 60;
