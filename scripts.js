@@ -2,7 +2,7 @@ $(document).ready(function() {
 
 	function restTimer() {
 		console.log("rest timer called");
-		secondsCounter();
+		// secondsCounter();
 		fullRest();
 	 }
 
@@ -10,25 +10,26 @@ $(document).ready(function() {
 	 		console.log("action timer called");
  	    setTimeout(function(){
  			    restTimer();
+ 			    audio.append('<audio src="./Audio/beep01.mp3" preload="auto" autoplay></audio>');
  		  	}, 10000);
 	 }
 
 	 function fullRest() {
 	 		console.log("full rest timer");
 	 	  setTimeout(function(){
+	 	  	audio.append('<audio src="./Audio/beep02.mp3" preload="auto" autoplay></audio>');
 		    actionTimer();
 	  	}, 5000);
 	 }
 
-	 function secondsCounter() {
-	 	var s = 0;
-	 	console.log("seconds counter");
- 	  setTimeout(function(){
- 	  	s = s+1;
-	    console.log(s);
-  	}, 1000);
-	 }
-
 	restTimer();
+
+
+	var button = $('#sound');
+	var audio = $('#audio');
+
+	button.on('click', function() {
+		console.log('clicked');
+	});
 
 });
