@@ -1,0 +1,141 @@
+/*
+Project Name: Flex Timer
+Client: GA Hackathon
+*/
+
+* {
+  -moz-box-sizing: border-box; /* Firexfox */
+  -webkit-box-sizing: border-box; /* Safari/Chrome/iOS/Android */
+  box-sizing: border-box; /* IE */
+}
+/* <div class="clearfix"></div> */
+.clearfix:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+.clear {
+  clear: both;
+}
+.italic {
+  font-style: italic;
+}
+.uppercase {
+  text-transform: uppercase;
+}
+a:link {
+    text-decoration: none;
+}
+a:visited {
+    text-decoration: none;
+}
+a {
+  color: #FFF;
+}
+.hide {
+  display: none;
+}
+
+.container {
+  width: 100%;
+  background-color: #D8D8D8;
+  font-family: 'Teko', sans-serif;
+  margin: 0 auto;
+  text-align: center;
+}
+
+p {
+  font-size: 40px;
+  text-transform: uppercase;
+}
+
+.header {
+  background-color: #353330;
+  color: #FFF;
+}
+
+img {
+  width: 60%;
+  padding: 2.5em;
+}
+
+.interval {
+  background-color: #FFF;
+  padding: 2em;
+}
+
+.interval-text {
+  color: #595959;
+  font-size: 65px;
+}
+
+.big-number {
+  color: #ff8a00;
+  font-size: 250px;
+  margin-top: -.1em;
+  margin-bottom: -.2em;
+}
+
+.rest {
+  padding-top: 1em;
+}
+
+.up-next-grey {
+  color: #595959;
+}
+
+.up-next-black {
+  color: #000;
+}
+
+.button-div {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.button {
+  width: 25%;
+  display: inline-block;
+  color: #ff8a00;
+  background-color: #353330;
+  padding: 2em;
+  text-align: center;
+  margin: 2em 3em;
+  transition-duration: 0.4s;
+}
+
+.button:hover {
+  background-color: #ff8a00;
+  color: #353330;
+}
+
+@media only screen and (max-width: 1000px) {
+  .button {
+    width: 45%;
+    margin: .1em;
+  }
+
+  img {
+    padding: 1em;
+  }
+}
+
+
+
+
+
+/*@media only screen and (max-width: 1300px) {
+  .video-overlay {
+    font-size: 80px;
+    letter-spacing: 10px;
+  }
+  .objective-overlay {
+    padding: 13em 2.5em 1em;
+    font-size: 40px;
+    line-height: 1.25em;
+    font-weight: normal;
+  }
+}*/
